@@ -1,0 +1,120 @@
+<form [formGroup]="productForm" id="product_form" (ngSubmit)="onSubmit()">
+  <!-- <input matInput type="text" formControlName="sku" id="sku" /> -->
+  <div class="input-flex-cont">
+    <h3>SKY</h3>
+    <mat-form-field class="example-full-width">
+      <mat-label>sku</mat-label>
+      <input matInput type="text" formControlName="sku" id="sku" />
+    </mat-form-field>
+  </div>
+
+  <div class="input-flex-cont">
+    <h3>Name</h3>
+    <mat-form-field class="example-full-width">
+      <mat-label>name</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="name"
+        id="name"
+        placeholder="Name"
+        required
+      />
+    </mat-form-field>
+  </div>
+  <div class="input-flex-cont">
+    <h3>Price</h3>
+    <mat-form-field class="example-full-width">
+      <mat-label>price</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="price"
+        id="price"
+        placeholder="Price"
+        required
+      />
+    </mat-form-field>
+  </div>
+  <div class="input-flex-cont">
+    <h3>PRODUCT</h3>
+    <mat-form-field>
+      <mat-label>Choose Product</mat-label>
+      <mat-select formControlName="productType" id="productType">
+        <mat-option *ngFor="let product of products" [value]="product">
+          {{ product }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <!-- Conditional Fields -->
+  <mat-form-field
+    *ngIf="productForm.value.productType === 'DVD'"
+    class="example-full-width"
+  >
+    <mat-label>size</mat-label>
+    <input
+      matInput
+      type="number"
+      formControlName="size"
+      id="size"
+      placeholder="Size (in MB)"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field
+    *ngIf="productForm.value.productType === 'Book'"
+    class="example-full-width"
+  >
+    <mat-label>wight</mat-label>
+    <input
+      matInput
+      type="number"
+      formControlName="weight"
+      id="weight"
+      placeholder="Weight (in Kg)"
+      required
+    />
+  </mat-form-field>
+  <div
+    formGroupName="furniture"
+    *ngIf="productForm.value.productType === 'Furniture'"
+    class="example-full-width"
+  >
+    <mat-form-field>
+      <mat-label>height</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="height"
+        id="height"
+        placeholder="Height"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>width</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="width"
+        id="width"
+        placeholder="Width"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>length</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="length"
+        id="length"
+        placeholder="Length"
+        required
+      />
+    </mat-form-field>
+  </div>
+
+  <!-- <button type="submit">Save</button> -->
+</form>

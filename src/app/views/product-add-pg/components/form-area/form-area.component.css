@@ -1,0 +1,17 @@
+form {
+  width: 70%;
+  margin: 50px 50px;
+}
+.input-flex-cont {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  gap: 3rem;
+}
+h3 {
+  width: 20%;
+}
+mat-form-field {
+  width: 100%;
+  display: block;
+}
