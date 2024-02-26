@@ -1,0 +1,22 @@
+<mat-toolbar>
+  <span>My App</span>
+  <div class="buttons-cont">
+    <button
+      mat-raised-button
+      class=""
+      aria-label="Example icon-button with heart icon"
+      (click)="onBtn1Click()"
+      routerLink="/product-list"
+    >
+      {{ button1 }}
+    </button>
+    <button
+      mat-raised-button
+      class=""
+      aria-label="Example icon-button with share icon"
+      (click)="onBtn2Click()"
+    >
+      {{ button2 }}
+    </button>
+  </div>
+</mat-toolbar>

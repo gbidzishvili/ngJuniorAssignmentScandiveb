@@ -8,8 +8,11 @@ import { FormAreaComponent } from './components/form-area/form-area.component';
 })
 export class ProductAddPgComponent {
   @ViewChild('formArea') formArea!: FormAreaComponent;
-  saveBtnClicedSubs() {
-    this.formArea.onSubmit();
-    console.log(this.formArea.products);
+  saveBtnClickedSubs() {
+    console.log('save clicked in add-product');
+    // this.formArea.onSubmit();
+  }
+  cancelBtnClickedSubs() {
+    console.log('cancle clicked in add-product');
   }
 }

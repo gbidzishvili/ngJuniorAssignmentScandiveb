@@ -1,1 +1,7 @@
-<p>product-list-pg works!</p>
+<app-title-bar
+  [button1]="'add'"
+  [button2]="'delete'"
+  (addBtnClickedEvent)="addBtnClickedSubs()"
+  (deleteBtnClickedEvent)="deletelBtnClickedSubs()"
+></app-title-bar>
+<app-card-list></app-card-list>

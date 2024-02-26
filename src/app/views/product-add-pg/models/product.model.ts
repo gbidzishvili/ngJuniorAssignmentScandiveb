@@ -1,4 +1,4 @@
-export class productModel {
+export class Product {
   sky!: string;
   name!: string;
   price!: number;

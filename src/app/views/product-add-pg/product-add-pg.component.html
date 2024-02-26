@@ -1,2 +1,7 @@
-<app-title-bar (saveBtnClickedEvent)="saveBtnClicedSubs()"></app-title-bar>
+<app-title-bar
+  [button1]="'save'"
+  [button2]="'cancel'"
+  (saveBtnClickedEvent)="saveBtnClickedSubs()"
+  (cancelBtnClickedEvent)="cancelBtnClickedSubs()"
+></app-title-bar>
 <app-form-area #formArea></app-form-area>
